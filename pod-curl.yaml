@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: mycurl
+  name: mycurl
+spec:
+  containers:
+  - image: curlimages/curl
+    command:: ["/bin/sh"]
+    #sample domain svc <name-svc>.<namespace>.svc.cluster.local
+    args: ["-c", "while true; do curl < DOMAIN WEB >; done"]
+    name: mycurl
